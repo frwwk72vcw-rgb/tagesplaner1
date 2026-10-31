@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Tagesplaner">
+<meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFHUlEQVR4Xu2cy5HbQAwFua7NxFk4GcfmZJyFY5EPqlKpqN9gSAAPmO4zJXGA5huIS+3X5XLZAJ7xg7LAK5ADkAPskBxAcoAdkgNIDrBDcgDJAXZIDiA5wA7JASQH2CE5gOQAOyQHkBxgh+QAkgPskBxAcoAdkgNIDrBDcgDJAXZIDiA5wA7JASQH2Pm2v6QJP//+Hl/Jv19/xg9uw9ci/4LBpMIIK+jSWY7ThXhFV1EayhHmxCPNLGklR6IW97RRpIMcIk70C5Lacshq0SNIqspRQovqipS8Q1rOjG0rec7FkqOiFjsKjauVkqOBGbUipEZy9NCiXIQUSI6WZpSIEHU5uppxRXx1utuKeOHORXNKFU2OpcyQjRBFOVYzQ3aLkZNjTTM0/dCSY2UzBP0QkgMz1PxQkQMz7hGphoQcIrWQQqEmEnKAJvlyKFwimqRXJlmO9PWLk1ufTDlyV16FxCplygHipMmReEGUI6tWOXJkrbYuKRXLkQNKkCBHykXQgPi6RcsRv8JOBFcvWg4oRKgcweK3JLKGoXJALeLkiFS+N2GVjJMDyoEc8JIgOcKSUAfXn6LE1DNIjtW4muHqRwARcsRorsO9E35+BFQ1Qo6leLTBzw9vkONMXnlQ1A93OQLST4T3Bnj44V1bdzkWYaT3I8dIgRwnMN718SMVQI6jWPttPT4RXzm8N8V05jo996qnuFbYVw6I7+iJIMc8cwHgeq2fC3JM0t6MbUOOKVYwAzlmWMQMXzkKba7jCJrhV2dmDgOCZriCHKOsZobvttKJBc1AjiHWNKOVHHMt/IjT25agyczh9MzmtBl+3yAi6SCH0zObi5vRYVtxemYTM8rL4fTMJmZcKbytOD2ziRk3qsox0sKRY3ZMvORKjwl0R0k5xls4fuSRH6i1NKPktmLq93jLrW97o6sZ9eSYa+HHV3084BWNzfCVY7rib5huhtTJnIvH0qp+Wzndj7niTp9GIUoOpNONOeuO2fQJ1KKkHEe+Oh6/176IGb4zhzfTTTryV7rpD61I1eQ4eOuJOWMEXznmemAi7FIO+yATrhX2lSOGgLYFfIQgHeQ4Mp+OsKYZtQfSHU4tdHrbErgnh+umGOOHLN61dZcjmHMv9HPfrRzd5Dhx/ljcjKCZwzv9Hjne1+Pv4E1AVRsmx5Uj3T3y2k4EyRGg+Vn5UcKMmHoGyZGFtdPW43vTXA7T/oIZO+LkiEnCp4x0feQYEcIqGSdHLu97X8iMSL4ul0vk56W3YXfZpZ+PlbDY2Lbt23py1SlnQyLR20qk+P0Irl60HOO/MoIdwWYE3T6HoiQkB+ExQXxsZCZHymqLklWrnOSAEmTKkXVB1CKxSplyMHx8JNGMzJnjRu76lUmvTHJygDIScqRfIoIo1ERCDoaPHQpmSMwcDB+aZmjJQX6oVUBlWyE/1MyQS44rIjtuMIKrlkuONf0QNGPbwh8TtNL+wS1NLa6IJsciI4iyGQXkaDyCiJtRYFu5p80Wo69FjW3lnio1fU+hVUT/buUUikZIIS3qJUfpKbWcGcVmjkdKREhFLa6U3FZ2yCpSV4s+ctwQsaS6Ezc6JIdOkLTRomFyZFnSzInOyfGU03ecrkLc03BbGcSkywoqPLKuHPAR9b/KQiLIAS9BDkAOsENyAMkBdkgOIDnADskBJAfYITmA5AA7JAeQHGCH5ACSA+yQHEBygB2SA0gOsENyAMkBdkgOIDnADskBJAfYITmA5AA7/wEZT9xwMbXHoQAAAABJRU5ErkJggg==">
+<title>Tagesplaner</title>
+<style id="css">
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:#fff;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;min-height:100%}
+#root{max-width:560px;margin:0 auto;min-height:100vh;padding:calc(env(safe-area-inset-top) + 36px) 22px calc(env(safe-area-inset-bottom) + 28px);display:flex;flex-direction:column}
+.head{margin-bottom:28px}
+.wd{font-size:34px;font-weight:700;letter-spacing:-.5px}
+.dt{font-size:17px;color:#777;margin-top:4px}
+.cd{font-size:13px;color:#aaa;margin-top:6px}
+.list{list-style:none;flex:1}
+.item{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid #eee;overflow:hidden;transition:opacity .3s,max-height .35s ease,padding .35s;max-height:120px}
+.item.gone{opacity:0;max-height:0;padding:0;border-width:0}
+.txt{flex:1;min-width:0}
+.ti{font-size:18px;font-weight:500;line-height:1.3}
+.me{font-size:14px;color:#888;margin-top:3px}
+.ck{width:34px;height:34px;border-radius:50%;border:2px solid #c8c8c8;background:#fff;flex:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s}
+.ck svg{opacity:0;transition:opacity .2s}
+.ck.on{background:#22c55e;border-color:#22c55e}
+.ck.on svg{opacity:1}
+.foot{text-align:center;margin-top:30px}
+.lnk{background:none;border:none;color:#999;font-size:15px;padding:10px;cursor:pointer}
+.done{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:fade .4s}
+.big{width:130px;height:130px;border-radius:50%;background:#22c55e;display:flex;align-items:center;justify-content:center;animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
+.done h1{font-size:26px;margin-top:26px}
+.done p{color:#888;margin-top:8px;font-size:16px}
+@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 24px);transform:translateX(-50%);background:#111;color:#fff;border-radius:22px;padding:11px 18px;font-size:15px;display:flex;gap:14px;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.toast button{background:none;border:none;color:#4ade80;font-weight:600;font-size:15px;cursor:pointer}
+.ed h2{font-size:24px;margin-bottom:6px}
+.ed .hint{color:#888;font-size:14px;margin-bottom:18px}
+.row{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.row input{border:1px solid #ddd;border-radius:10px;padding:10px;font-size:16px;font-family:inherit;min-width:0}
+.row .t{width:96px;flex:none}
+.row .n{flex:1}
+.row .m{width:62px;flex:none;text-align:center}
+.task{border-bottom:1px solid #eee;padding-bottom:12px;margin-bottom:12px}.task .row{margin-bottom:8px}
+.vr{display:flex;align-items:center;gap:6px;font-size:13px;color:#888;flex-wrap:wrap}
+.vr input{border:1px solid #ddd;border-radius:8px;padding:6px;font-size:14px;font-family:inherit;color:#333;min-width:0;flex:1}
+.del{background:none;border:none;color:#bbb;font-size:24px;width:30px;cursor:pointer;flex:none}
+.add{background:none;border:1px dashed #ccc;border-radius:10px;width:100%;padding:12px;font-size:16px;color:#555;margin:6px 0 24px;cursor:pointer}
+.lab{font-size:14px;color:#888;margin-bottom:6px}
+.date{border:1px solid #ddd;border-radius:10px;padding:10px;font-size:16px;font-family:inherit;margin-bottom:26px}
+.btns{display:flex;gap:10px}
+.btn{flex:1;padding:14px;border-radius:12px;font-size:17px;font-weight:600;border:none;cursor:pointer}
+.pri{background:#111;color:#fff}.sec{background:#f2f2f2;color:#111}
+</style>
+</head><body><div id="root"></div>
+<script type="application/json" id="state">null</script>
+<script id="app">
+(function(){
+var DEFAULT={
+  v:1,start:"2026-11-01",end:"2027-07-09",updated:0,
+  template:[
+    {id:"a1",time:"09:00",title:"Zahlenfolgen – Simulation",min:25},
+    {id:"a2",time:"09:30",title:"Wortflüssigkeit – Simulation",min:25},
+    {id:"a3",time:"10:00",title:"Zahlenfolgen üben",min:50},
+    {id:"a4",time:"11:00",title:"Wortflüssigkeit üben",min:50},
+    {id:"a5",time:"12:00",title:"BMS",min:50},
+    {id:"a6",time:"13:00",title:"BMS",min:50}
+  ],
+  days:{}
+};
+var LS="tagesplaner-medat";
+var root=document.getElementById("root");
+var embedded=null,local=null;
+try{embedded=JSON.parse(document.getElementById("state").textContent)}catch(e){}
+try{local=JSON.parse(localStorage.getItem(LS))}catch(e){}
+var S=embedded||JSON.parse(JSON.stringify(DEFAULT));
+if(local&&local.updated>(S.updated||0))S=local;
+if(!S.days)S.days={};
+
+var CSS=document.getElementById("css").textContent;
+var APP=document.getElementById("app").textContent;
+var art=null,timer=null,showingDone=null,toastT=null,lastId=null;
+try{if(window.claude&&claude.use)claude.use("artifact").then(function(a){art=a}).catch(function(){})}catch(e){}
+
+function key(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function parse(k){var p=k.split("-");return new Date(+p[0],p[1]-1,+p[2])}
+function next(k){var d=parse(k);d.setDate(d.getDate()+1);return key(d)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function sorted(){return S.template.slice().sort(function(a,b){return a.time<b.time?-1:a.time>b.time?1:0})}
+function day(k){return S.days[k]||(S.days[k]={done:[]})}
+function active(k){return sorted().filter(function(t){return (!t.from||k>=t.from)&&(!t.to||k<=t.to)})}
+function remaining(k){var d=S.days[k],dn=d?d.done:[];return active(k).filter(function(t){return dn.indexOf(t.id)<0})}
+
+function currentDay(){
+  var t=key(new Date()),k=t>S.start?t:S.start;
+  while(k<S.end&&((S.days[k]&&S.days[k].complete)||!active(k).length))k=next(k);
+  return k;
+}
+function buildDoc(){
+  var json=JSON.stringify(S).replace(/</g,"\\u003c");
+  var sc="scr"+"ipt";
+  return '<!DOCTYPE html>\n<html lang="de"><head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="apple-mobile-web-app-capable" content="yes">\n<title>Tagesplaner</title>\n<style id="css">'+CSS+'</style>\n</head><body><div id="root"></div>\n<'+sc+' type="application/json" id="state">'+json+'</'+sc+'>\n<'+sc+' id="app">'+APP+'</'+sc+'>\n</body></html>';
+}
+function flush(){
+  clearTimeout(timer);timer=null;
+  if(!art)return;
+  try{art.publish(buildDoc()).catch(function(){})}catch(e){}
+}
+function save(delay){
+  S.updated=Date.now();
+  try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){}
+  clearTimeout(timer);timer=setTimeout(flush,delay==null?4500:delay);
+}
+document.addEventListener("visibilitychange",function(){if(document.hidden&&timer)flush()});
+
+var CHECK='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+var BIG='<svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+
+function header(k){
+  var d=parse(k),days=Math.round((parse(S.end)-d)/864e5);
+  return '<div class="head"><div class="wd">'+d.toLocaleDateString("de-AT",{weekday:"long"})+'</div><div class="dt">'+d.toLocaleDateString("de-AT",{day:"numeric",month:"long",year:"numeric"})+'</div>'+(days>0?'<div class="cd">Noch '+days+(days==1?' Tag':' Tage')+' bis zum MedAT</div>':'')+'</div>';
+}
+function render(){
+  if(showingDone){
+    root.innerHTML=header(showingDone)+'<div class="done"><div class="big">'+BIG+'</div><h1>Alle Aufgaben erledigt</h1><p>Gut gemacht.</p></div>';
+    return;
+  }
+  var k=currentDay();
+  if(k>=S.end){
+    var dd=parse(S.end),t=key(new Date());
+    root.innerHTML='<div class="done"><div class="big">'+BIG+'</div><h1>'+(t==S.end?'Heute ist MedAT':'MedAT')+'</h1><p>'+dd.toLocaleDateString("de-AT",{weekday:"long",day:"numeric",month:"long",year:"numeric"})+'<br>Viel Erfolg!</p></div><div class="foot"><button class="lnk" id="edit">Bearbeiten</button></div>';
+    document.getElementById("edit").onclick=editor;return;
+  }
+  var rem=remaining(k),h=header(k)+'<ul class="list">';
+  rem.forEach(function(t){
+    h+='<li class="item" data-id="'+t.id+'"><div class="txt"><div class="ti">'+esc(t.title)+'</div><div class="me">'+esc(t.time)+(t.min?' · '+t.min+' Min.':'')+'</div></div><button class="ck" aria-label="Erledigt">'+CHECK+'</button></li>';
+  });
+  h+='</ul><div class="foot"><button class="lnk" id="edit">Bearbeiten</button></div>';
+  root.innerHTML=h;
+  root.querySelectorAll(".item").forEach(function(li){
+    li.querySelector(".ck").onclick=function(){tick(k,li)};
+  });
+  document.getElementById("edit").onclick=editor;
+  if(!rem.length&&active(k).length)complete(k);
+}
+function tick(k,li){
+  var b=li.querySelector(".ck");if(b.classList.contains("on"))return;
+  b.classList.add("on");
+  var id=li.getAttribute("data-id");
+  day(k).done.push(id);
+  setTimeout(function(){li.classList.add("gone")},300);
+  setTimeout(function(){
+    li.remove();
+    if(!remaining(k).length)complete(k);
+    else{save();toast(k,id)}
+  },650);
+}
+function complete(k){
+  day(k).complete=true;hideToast();
+  showingDone=k;render();save(60000);
+  setTimeout(function(){showingDone=null;render();save(0)},2800);
+}
+function toast(k,id){
+  hideToast();
+  var t=document.createElement("div");t.className="toast";t.id="toast";
+  t.innerHTML='<span>Erledigt</span><button>Rückgängig</button>';
+  t.querySelector("button").onclick=function(){
+    var d=day(k);d.done=d.done.filter(function(x){return x!==id});
+    hideToast();save();render();
+  };
+  document.body.appendChild(t);
+  toastT=setTimeout(hideToast,4000);
+}
+function hideToast(){clearTimeout(toastT);var t=document.getElementById("toast");if(t)t.remove()}
+
+function editor(){
+  hideToast();
+  var list=sorted().map(function(t){return{id:t.id,time:t.time,title:t.title,min:t.min,from:t.from||"",to:t.to||""}});
+  function draw(){
+    var h='<div class="ed"><h2>Bearbeiten</h2><p class="hint">Ohne Datum gilt eine Aufgabe jeden Tag. Mit „Gültig von / bis“ nur in diesem Zeitraum.</p>';
+    list.forEach(function(t,i){
+      h+='<div class="task" data-i="'+i+'"><div class="row"><input class="t" type="time" value="'+esc(t.time)+'"><input class="n" placeholder="Aufgabe" value="'+esc(t.title)+'"><input class="m" inputmode="numeric" placeholder="Min" value="'+(t.min||"")+'"><button class="del" aria-label="Löschen">×</button></div><div class="vr"><span>Gültig von</span><input class="f" type="date" value="'+esc(t.from)+'"><span>bis</span><input class="u" type="date" value="'+esc(t.to)+'"></div></div>';
+    });
+    h+='<button class="add" id="add">+ Aufgabe hinzufügen</button><div class="lab">MedAT-Termin</div><input class="date" id="end" type="date" value="'+S.end+'"><div class="btns"><button class="btn sec" id="cancel">Abbrechen</button><button class="btn pri" id="ok">Fertig</button></div></div>';
+    root.innerHTML=h;
+    root.querySelectorAll(".task").forEach(function(r){
+      var i=+r.getAttribute("data-i"),q=r.querySelectorAll("input");
+      q[3].onchange=function(){list[i].from=this.value};
+      q[4].onchange=function(){list[i].to=this.value};
+      q[0].oninput=function(){list[i].time=this.value};
+      q[1].oninput=function(){list[i].title=this.value};
+      q[2].oninput=function(){list[i].min=parseInt(this.value,10)||0};
+      r.querySelector(".del").onclick=function(){list.splice(i,1);draw()};
+    });
+    document.getElementById("add").onclick=function(){
+      var last=list[list.length-1],tm="14:00";
+      if(last&&last.time){var p=last.time.split(":");tm=String(Math.min(23,+p[0]+1)).padStart(2,"0")+":"+p[1]}
+      list.push({id:"t"+Date.now().toString(36),time:tm,title:"",min:50,from:"",to:""});draw();
+      var ns=root.querySelectorAll(".n");ns[ns.length-1].focus();
+    };
+    document.getElementById("cancel").onclick=render;
+    document.getElementById("ok").onclick=function(){
+      S.template=list.filter(function(t){return t.title.trim()}).map(function(t){t.title=t.title.trim();return t});
+      var e=document.getElementById("end").value;if(e)S.end=e;
+      save(800);render();
+    };
+  }
+  draw();
+}
+render();
+})();
+</script>
+</body></html>
